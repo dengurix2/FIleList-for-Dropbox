@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZCu-Yt-BLV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DropboxReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cc8-sA-8RT">
+                                <rect key="frame" x="0.0" y="86" width="375" height="537"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyCell" id="v5s-LW-cSh">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v5s-LW-cSh" id="DVf-4x-ASb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0ss-c0-kJE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xdS-IG-4KW"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zcu-7d-sUN" userLabel="Bottom Bar View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmE-re-jUT">
+                                        <rect key="frame" x="20" y="18" width="48" height="30"/>
+                                        <state key="normal" title="&lt; Back"/>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bQJ-yt-IcB"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvv-M8-WH8">
+                                        <rect key="frame" x="0.0" y="66" width="375" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="BBz-uP-dcY"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQH-Wj-cXE">
+                                        <rect key="frame" x="78" y="33" width="219" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="219" id="m6s-mm-jlf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CF-QR-Gzz">
+                                        <rect key="frame" x="305" y="18" width="47" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="47" id="8Sd-xe-gVf"/>
+                                            <constraint firstAttribute="height" constant="30" id="B4v-aY-Mrb"/>
+                                        </constraints>
+                                        <state key="normal" title="Reload"/>
+                                        <connections>
+                                            <action selector="reloadButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K61-is-Jcm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="mvv-M8-WH8" firstAttribute="leading" secondItem="Zcu-7d-sUN" secondAttribute="leading" id="0LL-8Y-CLL"/>
+                                    <constraint firstItem="bmE-re-jUT" firstAttribute="leading" secondItem="Zcu-7d-sUN" secondAttribute="leading" constant="20" id="9cS-Aw-1oF"/>
+                                    <constraint firstAttribute="trailing" secondItem="7CF-QR-Gzz" secondAttribute="trailing" constant="23" id="K3m-Ki-5eM"/>
+                                    <constraint firstAttribute="bottom" secondItem="mvv-M8-WH8" secondAttribute="bottom" constant="-1" id="TwM-Y7-QJF"/>
+                                    <constraint firstItem="EQH-Wj-cXE" firstAttribute="centerY" secondItem="Zcu-7d-sUN" secondAttribute="centerY" id="Zih-dl-cxV"/>
+                                    <constraint firstItem="EQH-Wj-cXE" firstAttribute="centerX" secondItem="Zcu-7d-sUN" secondAttribute="centerX" id="cWs-UQ-M1E"/>
+                                    <constraint firstItem="bmE-re-jUT" firstAttribute="top" secondItem="Zcu-7d-sUN" secondAttribute="top" constant="18" id="dDg-Dm-Yvi"/>
+                                    <constraint firstAttribute="bottom" secondItem="bmE-re-jUT" secondAttribute="bottom" constant="18" id="fWt-lH-w3s"/>
+                                    <constraint firstAttribute="height" constant="66" id="g8W-W1-IsG"/>
+                                    <constraint firstAttribute="trailing" secondItem="mvv-M8-WH8" secondAttribute="trailing" id="gxS-nO-hFu"/>
+                                    <constraint firstItem="EQH-Wj-cXE" firstAttribute="centerY" secondItem="Zcu-7d-sUN" secondAttribute="centerY" id="pzs-0i-G2y"/>
+                                    <constraint firstItem="7CF-QR-Gzz" firstAttribute="top" secondItem="Zcu-7d-sUN" secondAttribute="top" constant="18" id="sVi-dH-vfY"/>
+                                    <constraint firstItem="EQH-Wj-cXE" firstAttribute="centerX" secondItem="Zcu-7d-sUN" secondAttribute="centerX" id="xON-h5-COR"/>
+                                    <constraint firstItem="mvv-M8-WH8" firstAttribute="top" secondItem="7CF-QR-Gzz" secondAttribute="bottom" constant="18" id="zGO-XK-CiG"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0N9-eX-eSr">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="cJX-LA-RfK"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" id="Erp-yK-Zaz">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bi8-Zt-Upw">
+                                            <rect key="frame" x="16" y="7" width="59" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Dropbox"/>
+                                            <connections>
+                                                <action selector="showLinkDropboxView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RJo-jv-guD"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HYI-Ps-pOU"/>
+                                    <barButtonItem image="icon_info" id="o8p-hP-tXa">
+                                        <connections>
+                                            <segue destination="F0k-um-3xw" kind="presentation" id="hFA-j3-jet"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Xi-73-RV4">
+                                <rect key="frame" x="-350" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="6bG-bp-EAD">
+                                        <rect key="frame" x="164" y="315" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6bG-bp-EAD" firstAttribute="centerX" secondItem="5Xi-73-RV4" secondAttribute="centerX" id="kVe-S8-mJY"/>
+                                    <constraint firstItem="6bG-bp-EAD" firstAttribute="centerY" secondItem="5Xi-73-RV4" secondAttribute="centerY" id="n5k-QP-beb"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9q7-oV-jbM" userLabel="Link Dropbox View BG">
+                                <rect key="frame" x="350" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kce-0R-88K" userLabel="Link Dropbox View">
+                                        <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="218-Fk-iQb">
+                                                <rect key="frame" x="0.0" y="27" width="240" height="30"/>
+                                                <state key="normal" title="link Dropbox"/>
+                                                <connections>
+                                                    <action selector="linkButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gWb-jb-YZ8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0s-jt-nXF">
+                                                <rect key="frame" x="0.0" y="71" width="240" height="30"/>
+                                                <state key="normal" title="close"/>
+                                                <connections>
+                                                    <action selector="showLinkDropboxView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="clg-HV-IbH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="B0s-jt-nXF" secondAttribute="trailing" id="0sY-er-RBQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="218-Fk-iQb" secondAttribute="trailing" id="OTA-0T-egd"/>
+                                            <constraint firstItem="218-Fk-iQb" firstAttribute="top" secondItem="Kce-0R-88K" secondAttribute="top" constant="27" id="XPz-R0-W3k"/>
+                                            <constraint firstItem="218-Fk-iQb" firstAttribute="centerX" secondItem="Kce-0R-88K" secondAttribute="centerX" id="cTd-bq-krb"/>
+                                            <constraint firstAttribute="width" constant="240" id="e5A-lC-LwF"/>
+                                            <constraint firstItem="B0s-jt-nXF" firstAttribute="leading" secondItem="Kce-0R-88K" secondAttribute="leading" id="hDh-eK-4GV"/>
+                                            <constraint firstItem="218-Fk-iQb" firstAttribute="leading" secondItem="Kce-0R-88K" secondAttribute="leading" id="hTW-bJ-FMY"/>
+                                            <constraint firstItem="B0s-jt-nXF" firstAttribute="centerX" secondItem="Kce-0R-88K" secondAttribute="centerX" id="njr-NU-bmS"/>
+                                            <constraint firstAttribute="height" constant="128" id="xMS-ms-VGI"/>
+                                            <constraint firstAttribute="bottom" secondItem="B0s-jt-nXF" secondAttribute="bottom" constant="27" id="xpr-I4-pt0"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Kce-0R-88K" firstAttribute="centerX" secondItem="9q7-oV-jbM" secondAttribute="centerX" id="LSb-2g-GEd"/>
+                                    <constraint firstItem="Kce-0R-88K" firstAttribute="centerY" secondItem="9q7-oV-jbM" secondAttribute="centerY" id="U73-S6-QAc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Cc8-sA-8RT" secondAttribute="trailing" id="0pv-0B-kkd"/>
+                            <constraint firstAttribute="trailing" secondItem="Zcu-7d-sUN" secondAttribute="trailing" id="5Yo-h6-Syz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0N9-eX-eSr" secondAttribute="bottom" id="ArB-gH-wIf"/>
+                            <constraint firstItem="0N9-eX-eSr" firstAttribute="top" secondItem="Cc8-sA-8RT" secondAttribute="bottom" id="CMU-cM-2fH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Xi-73-RV4" secondAttribute="bottom" id="Cdc-jn-c3b"/>
+                            <constraint firstAttribute="trailing" secondItem="0N9-eX-eSr" secondAttribute="trailing" id="G9B-wc-z8W"/>
+                            <constraint firstItem="9q7-oV-jbM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IrT-YJ-y1l"/>
+                            <constraint firstItem="0N9-eX-eSr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="J6B-cO-yEm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9q7-oV-jbM" secondAttribute="bottom" id="MAu-iK-m27"/>
+                            <constraint firstItem="Zcu-7d-sUN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ngh-59-3pz"/>
+                            <constraint firstItem="Zcu-7d-sUN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Vxd-wb-dJu"/>
+                            <constraint firstAttribute="trailing" secondItem="5Xi-73-RV4" secondAttribute="trailing" id="WlC-d6-kjD"/>
+                            <constraint firstItem="5Xi-73-RV4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Yz0-3J-L6k"/>
+                            <constraint firstItem="Cc8-sA-8RT" firstAttribute="top" secondItem="Zcu-7d-sUN" secondAttribute="bottom" id="bHw-ea-B3D"/>
+                            <constraint firstItem="Cc8-sA-8RT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hWd-29-ey8"/>
+                            <constraint firstItem="9q7-oV-jbM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jMg-JL-KJC"/>
+                            <constraint firstItem="5Xi-73-RV4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jvD-Zd-vXs"/>
+                            <constraint firstAttribute="trailing" secondItem="9q7-oV-jbM" secondAttribute="trailing" id="w8v-Wg-t3J"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WZc-Ej-lqo"/>
+                    <connections>
+                        <outlet property="backButton" destination="bmE-re-jUT" id="o6y-yg-Y02"/>
+                        <outlet property="linkButton" destination="218-Fk-iQb" id="OEO-1j-W2Z"/>
+                        <outlet property="linkDropboxBGView" destination="9q7-oV-jbM" id="Gfo-mR-tnT"/>
+                        <outlet property="listTableView" destination="Cc8-sA-8RT" id="Ehf-lQ-ikp"/>
+                        <outlet property="loadingView" destination="5Xi-73-RV4" id="AjS-7t-DRb"/>
+                        <outlet property="reloadButton" destination="7CF-QR-Gzz" id="AfV-Pe-4Qd"/>
+                        <outlet property="titleLabel" destination="EQH-Wj-cXE" id="4fs-UC-hbj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954" y="385"/>
+        </scene>
+        <!--Info-->
+        <scene sceneID="28I-II-2jP">
+            <objects>
+                <viewController title="Info" id="F0k-um-3xw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z6v-r1-DpP"/>
+                        <viewControllerLayoutGuide type="bottom" id="O8d-dj-XDe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hny-c9-GxZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nmP-ZK-1k9">
+                                <rect key="frame" x="0.0" y="86" width="375" height="581"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment content=" Dropbox SDK: Copyright ">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="(">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="c">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=")">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" 2015 Dropbox Inc.">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> http://www.dropbox.com/
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Permission is hereby granted</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" free of charge">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> to any person obtaining
+a copy of this software and associated documentation files </string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="(">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">the
+"Software"</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="),">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" to deal in the Software without restriction">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> including
+without limitation the rights to use</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" copy">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" modify">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" merge">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" publish">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+distribute</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" sublicense">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" and/or sell copies of the Software">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> and to
+permit persons to whom the Software is furnished to do so</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS"</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" WITHOUT WARRANTY OF ANY KIND">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+EXPRESS OR IMPLIED</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" DAMAGES OR OTHER LIABILITY">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> WHETHER IN AN ACTION
+OF CONTRACT</string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" TORT OR OTHERWISE">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ARISING FROM">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <font key="NSOriginalFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content"> OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.   </string>
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="This App: Copyright ">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="(">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="c">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=")">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".HiraKakuInterface-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" 2016 Takahiro Hirata. http://www.takahirohirata.com/">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQ0-PQ-3Te" userLabel="Bottom Bar View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="66"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7qS-KR-fr7">
+                                        <rect key="frame" x="0.0" y="66" width="375" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="dAf-b1-vq1"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuU-uX-uCx">
+                                        <rect key="frame" x="328" y="18" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3GR-kz-4Uj"/>
+                                            <constraint firstAttribute="width" constant="30" id="bwO-RG-oCr"/>
+                                        </constraints>
+                                        <state key="normal" image="icon_close"/>
+                                        <connections>
+                                            <segue destination="3gp-gV-M8E" kind="unwind" unwindAction="unwindToViewControllerWithSegue:" id="iMm-cg-lxO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="TuU-uX-uCx" firstAttribute="top" secondItem="NQ0-PQ-3Te" secondAttribute="top" constant="18" id="5az-lQ-JhX"/>
+                                    <constraint firstItem="7qS-KR-fr7" firstAttribute="top" secondItem="TuU-uX-uCx" secondAttribute="bottom" constant="18" id="6m1-Xb-ysT"/>
+                                    <constraint firstAttribute="trailing" secondItem="TuU-uX-uCx" secondAttribute="trailing" constant="17" id="CD3-zE-WLb"/>
+                                    <constraint firstItem="7qS-KR-fr7" firstAttribute="leading" secondItem="NQ0-PQ-3Te" secondAttribute="leading" id="VP6-fO-tuL"/>
+                                    <constraint firstAttribute="trailing" secondItem="7qS-KR-fr7" secondAttribute="trailing" id="bCn-fC-sXU"/>
+                                    <constraint firstAttribute="height" constant="66" id="c7l-gP-eR4"/>
+                                    <constraint firstAttribute="bottom" secondItem="7qS-KR-fr7" secondAttribute="bottom" constant="-1" id="sLD-BR-Y6T"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NQ0-PQ-3Te" firstAttribute="leading" secondItem="hny-c9-GxZ" secondAttribute="leading" id="OR2-qP-8zS"/>
+                            <constraint firstItem="O8d-dj-XDe" firstAttribute="top" secondItem="nmP-ZK-1k9" secondAttribute="bottom" id="Rgm-Oe-hUy"/>
+                            <constraint firstItem="nmP-ZK-1k9" firstAttribute="top" secondItem="NQ0-PQ-3Te" secondAttribute="bottom" id="Xhh-tB-mE9"/>
+                            <constraint firstAttribute="trailing" secondItem="nmP-ZK-1k9" secondAttribute="trailing" id="dN7-VE-CsC"/>
+                            <constraint firstItem="nmP-ZK-1k9" firstAttribute="top" secondItem="NQ0-PQ-3Te" secondAttribute="bottom" id="fPS-lC-OMu"/>
+                            <constraint firstAttribute="trailing" secondItem="NQ0-PQ-3Te" secondAttribute="trailing" id="gUJ-aD-Ouc"/>
+                            <constraint firstItem="NQ0-PQ-3Te" firstAttribute="top" secondItem="Z6v-r1-DpP" secondAttribute="bottom" id="rhL-8b-sfw"/>
+                            <constraint firstItem="nmP-ZK-1k9" firstAttribute="leading" secondItem="hny-c9-GxZ" secondAttribute="leading" id="vzA-LL-tD4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ats-ru-x4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3gp-gV-M8E" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1785" y="385"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wBe-Re-4aE">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="ZCu-Yt-BLV" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y0k-pq-wvh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0qm-vh-ROi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BvL-WM-hF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="385"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_close" width="30" height="30"/>
+        <image name="icon_info" width="30" height="30"/>
+    </resources>
+</document>

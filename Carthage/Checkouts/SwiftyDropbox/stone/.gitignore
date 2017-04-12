@@ -1,0 +1,17 @@
+*~
+*.pyc
+*.pyo
+*.swp
+parser.out
+parsetab.py
+.idea
+/.tox
+/build
+/dist
+/MANIFEST
+/stone.egg-info
+/setuptools-3.1-py2.7.egg
+/setuptools-3.1.zip
+/.cache
+.DS_Store
+.arcconfig
